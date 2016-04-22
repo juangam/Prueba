@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Direccion list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Calle</th>
+                <th>Numint</th>
+                <th>Numext</th>
+                <th>Localidad</th>
+                <th>Municipio</th>
+                <th>Codpostal</th>
+                <th>Munic</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for direccion in direccions %}
+            <tr>
+                <td><a href="{{ path('direccion_show', { 'id': direccion.id }) }}">{{ direccion.id }}</a></td>
+                <td>{{ direccion.calle }}</td>
+                <td>{{ direccion.numInt }}</td>
+                <td>{{ direccion.numExt }}</td>
+                <td>{{ direccion.localidad }}</td>
+                <td>{{ direccion.municipio }}</td>
+                <td>{{ direccion.codPostal }}</td>
+                <td>{{ direccion.munic }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('direccion_show', { 'id': direccion.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('direccion_edit', { 'id': direccion.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('direccion_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

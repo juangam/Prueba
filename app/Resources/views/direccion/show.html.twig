@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Direccion</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ direccion.id }}</td>
+            </tr>
+            <tr>
+                <th>Calle</th>
+                <td>{{ direccion.calle }}</td>
+            </tr>
+            <tr>
+                <th>Numint</th>
+                <td>{{ direccion.numInt }}</td>
+            </tr>
+            <tr>
+                <th>Numext</th>
+                <td>{{ direccion.numExt }}</td>
+            </tr>
+            <tr>
+                <th>Localidad</th>
+                <td>{{ direccion.localidad }}</td>
+            </tr>
+            <tr>
+                <th>Municipio</th>
+                <td>{{ direccion.municipio }}</td>
+            </tr>
+            <tr>
+                <th>Codpostal</th>
+                <td>{{ direccion.codPostal }}</td>
+            </tr>
+            <tr>
+                <th>Munic</th>
+                <td>{{ direccion.munic }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('direccion_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('direccion_edit', { 'id': direccion.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

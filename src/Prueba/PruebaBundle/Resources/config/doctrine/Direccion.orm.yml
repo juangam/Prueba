@@ -1,0 +1,30 @@
+Prueba\PruebaBundle\Entity\Direccion:
+    type: entity
+    table: null
+    repositoryClass: Prueba\PruebaBundle\Repository\DireccionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '30'
+        numInt:
+            type: integer
+        numExt:
+            type: integer
+        localidad:
+            type: string
+            length: '30'
+        municipio:
+            type: string
+            length: '30'
+        codPostal:
+            type: integer
+        munic:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }

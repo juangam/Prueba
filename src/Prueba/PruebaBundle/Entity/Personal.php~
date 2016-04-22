@@ -1,0 +1,55 @@
+<?php
+
+namespace Prueba\PruebaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Personal
+ *
+ * @ORM\Table(name="personal")
+ * @ORM\Entity
+ */
+class Personal
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="personal_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=20, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ape_pat", type="string", length=20, nullable=false)
+     */
+    private $apePat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ape_mat", type="string", length=20, nullable=false)
+     */
+    private $apeMat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="edad", type="string", length=255, nullable=false)
+     */
+    private $edad;
+
+
+}
+
